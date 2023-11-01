@@ -1,0 +1,28 @@
+{
+   "token": "OTIzMzQ3MjE5Njk0ODc4Nzgx.YcOsHA.nhbdRfH3Iqf0UVWCVjdUf6Bs0DY",
+   "prefix": "!",
+   "ownerIDS": [
+      "535543948219908098"
+   ],
+   "status": {
+      "text": "Premier League",
+      "text2": "Por: nunex#3960",
+      "type": 5,
+      "type1": "PLAYING",
+      "stats": "idle",
+      "stats1": "online"
+   },
+   "clientsettings": {
+      "nodes": [
+         {
+            "host": "narco.buses.rocks",
+            "port": 2269,
+            "password": "glasshost1984"
+         }
+      ]
+   },
+   "spotify": {
+      "clientID": "114be91da444461c843b9af0d14db102",
+      "clientSecret": "cc307eb7e8d0490babffc6795638b14b"
+   }
+}
