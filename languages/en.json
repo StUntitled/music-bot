@@ -1,0 +1,323 @@
+{
+    "cmds": {
+        "music": {
+            "autoplay": {
+                "enabled": {
+                    "title": "**Successfully __Enabled__ AUTOPLAY MODE**",
+                    "description": "**I will now automatically add a Song when the Queue get's Empty (overwrites afk-Mode)!**"
+                },
+                "disabled": {
+                    "title": "**Successfully __Disabled__ AUTOPLAY MODE**",
+                    "description": "**I will now not automatically add a Song when the Queue get's Empty (overwrites afk-Mode)!**"
+                },
+                "variable1": "`${player.get(`autoplay`) ? client.la[ls].cmds.music.autoplay.enabled.title : client.la[ls].cmds.music.autoplay.disabled.title}`",
+                "variable2": "`${player.get(`autoplay`) ? client.la[ls].cmds.music.autoplay.enabled.description : client.la[ls].cmds.music.autoplay.disabled.description}`",
+                "variable3": "``"
+            },
+            "clearqueue": {
+                "title": "🗑 **Cleared the Queue!**",
+                "variable1": "``"
+            },
+            "join": {
+                "title": "👍 **Joined and connected to your Talk!**",
+                "variable1": "`Channel: <#${player.voiceChannel}>`",
+                "variable2": "`Channel: <#${player.voiceChannel}>`",
+                "variable3": "`Channel: <#${player.voiceChannel}>`",
+                "variable4": "``"
+            },
+            "moveme": {
+                "variable1": "`${emoji.msg.ERROR} I am connected nowhere`",
+                "variable2": "`${emoji.msg.ERROR} Please Connect first`",
+                "variable3": "`${emoji.msg.ERROR} The Channel is full, I cant move you`",
+                "variable4": "`${emoji.msg.ERROR} You are already in my channel `",
+                "variable5": "``"
+            },
+            "nowplaying": {
+                "variable1": "`${emoji.msg.ERROR} There is nothing playing`",
+                "variable2": "`${player.playing ? `${emoji.msg.resume}` : `${emoji.msg.pause}`} **${player.queue.current.title}**`",
+                "variable3": "``"
+            },
+            "pause": {
+                "variable1": "`${emoji.msg.ERROR} The song is already paused!`",
+                "variable2": "`You can resume it with: \\`${prefix}resume\\``",
+                "variable3": "``"
+            },
+            "play": {
+                "variable1": "`${emoji.msg.ERROR} You need to give me a URL or a Search term.`",
+                "variable2": "``"
+            },
+            "queue": {
+                "variablex_1": "`**0) Música a tocar:**`", "variable1": "`**${player.queue.current.title.substr(0, 60)}** - \\`${player.queue.current.isStream ? `LIVE` : format(player.queue.current.duration).split(` | `)[0]}\\`\\n*Pedido de: ${player.queue.current.requester.tag}*`",
+                "variable2": "`${emoji.msg.ERROR} Sem músicas na fila!`",
+                "variablex_3": "`**0) Música a tocar:**`", "variable3": "`**${player.queue.current.title.substr(0, 60)}** - \\`${player.queue.current.isStream ? `LIVE` : format(player.queue.current.duration).split(` | `)[0]}\\`\\n*Pedido de: ${player.queue.current.requester.tag}*`",
+                "variablex_4": "`**0) Música a tocar:**`", "variable4": "`**${player.queue.current.title.substr(0, 60)}** - \\`${player.queue.current.isStream ? `LIVE` : format(player.queue.current.duration).split(` | `)[0]}\\`\\n*Pedido de: ${player.queue.current.requester.tag}*`",
+                "variable5": "``"
+            },
+            "restart": {
+                "variable1": "``"
+            },
+            "resume": {
+                "variable1": "`${emoji.msg.ERROR} The song is already resumed!`",
+                "variable2": "`You can pause it with: \\`${prefix}pause\\``",
+                "variable3": "``"
+            },
+            "search": {
+                "variable1": "`${emoji.msg.ERROR} You need to give me a URL or a search term.`",
+                "variable2": "``"
+            },
+            "skip": {
+                "title": "⏹️ **Stopped playing and left your Channel!**",
+                "title2": "⏭ **Skipped the current Track!**",
+                "variable1": "`Canal de voz: <#${player.voiceChannel}>`",
+                "variable2": "``"
+            },
+            "stop": {
+                "variable1": "`${emoji.msg.stop} Stopped and left your Channel`",
+                "variable2": "`${emoji.msg.ERROR} **No song is currently playing in this guild.**`",
+                "variable3": "`${emoji.msg.ERROR} **No song is currently playing in this guild.**`",
+                "variable4": "``"
+            },
+            "volume": {
+                "variable1": "`${emoji.msg.ERROR} Volume setado para o \\`1\\` - \\`150\\``",
+                "variable2": "`**Volume atual: \\`${player.volume}%\\`**`",
+                "variable3": "`${emoji.msg.ERROR} Precisas de setar o volume \\`1\\` - \\`150\\``",
+                "variable4": "`**Volume atual: \\`${player.volume}%\\`**`",
+                "variable5": "`${emoji.msg.raise_volume} Volume setado para o: \\`${player.volume} %\\``",
+                "variable6": "`**Volume atual: \\`${player.volume}%\\`**`",
+                "variable7": "``"
+            }
+        },
+        "customqueues": {
+            "savedqueue": {
+                "variable1": "`${emoji.msg.ERROR} You didn't entered a TYPE`",
+                "variable2": "`Usage: \\`${prefix}savedqueue <Type> <Name> [Options]\\`\\nAvailable Types:\\n\\`create\\`, \\`addcurrenttrack\\`, \\`addcurrentqueue\\`, \\`removetrack\\`, \\`removedupes\\`, \\`showall\\`, \\`createsave\\`, \\`delete\\`, \\`showdetails\\`, \\`play\\`, \\`shuffle\\``",
+                "variable3": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable4": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable5": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable6": "`Maximum Length is \\`10\\``",
+                "variable7": "`${emoji.msg.ERROR} Your Queue already exists!`",
+                "variable8": "`Delete it: \\`${prefix}savedqueue delete ${Name}\\`\\nShow its content: \\`${prefix}savedqueue showdetails ${Name}`",
+                "variable9": "`${emoji.msg.SUCCESS} Created ${Name}`",
+                "variable10": "`Add the current **Queue** onto it: \\`${prefix}savedqueue addcurrentqueue ${Name}\\`\\nAdd the current **Track** onto it: \\`${prefix}savedqueue addcurrenttrack ${Name}\\``",
+                "variable11": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable12": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable13": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable14": "`Maximum Length is \\`10\\``",
+                "variable15": "`${emoji.msg.ERROR} Your Queue does not exists yet!`",
+                "variable16": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable17": "`${emoji.msg.ERROR} There is nothing playing`",
+                "variable18": "`${emoji.msg.ERROR} There is nothing playing!`",
+                "variable19": "`There are now: \\`${client.queuesaves.get(message.author.id, `${Name}`).length} Tracks\\`\\n\\nPlay it with: \\`${prefix}savedqueue play ${Name}\\``",
+                "variable20": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable21": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable22": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable23": "`Maximum Length is \\`10\\``",
+                "variable24": "`${emoji.msg.ERROR} Your Queue does not exists yet!`",
+                "variable25": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable26": "`${emoji.msg.ERROR} There is nothing playing`",
+                "variable27": "`${emoji.msg.ERROR} The Queue is Empty!`",
+                "variable28": "`${emoji.msg.SUCCESS} Added ${tracks.length} Tracks onto the Queue \\`${Name}\\``",
+                "variable29": "`There are now: \\`${newqueue.length} Tracks\\`\\n\\nPlay it with: \\`${prefix}savedqueue play ${Name}\\``",
+                "variable30": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable31": "`Usage: \\`${prefix}savedqueue removetrack <Name> [Options]\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable32": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable33": "`Maximum Length is \\`10\\``",
+                "variable34": "`${emoji.msg.ERROR} You didn't entered an Option (the Track you want to remove (ID OF IT))`",
+                "variable35": "`See all your Tracks: \\`${prefix}savedqueue showdetails ${Name}\\`Usage: \\`${prefix}savedqueue removetrack ${Name} <Song number>\\``",
+                "variable36": "`${emoji.msg.ERROR} Your Queue is not existing!`",
+                "variable37": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable38": "`${emoji.msg.ERROR} Your provided Option is out of Range (\\`0\\` - \\`${tracks.length-1}\\`)`",
+                "variable39": "`See all your Tracks: \\`${prefix}savedqueue showdetails ${Name}\\`Usage: \\`${prefix}savedqueue removetrack ${Name} <Song number>\\``",
+                "variable40": "`There are now: \\`${client.queuesaves.get(message.author.id, `${Name}`).length} Tracks\\`\\n\\nPlay it with: \\`${prefix}savedqueue play ${Name}\\``",
+                "variable41": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable42": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable43": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable44": "`Maximum Length is \\`10\\``",
+                "variable45": "`${emoji.msg.ERROR} Your Queue is not existing!`",
+                "variable46": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable47": "`${emoji.msg.ERROR} Your Saved-Queue ${Name} is Empty!`",
+                "variable48": "`Add the current **Queue** onto it: \\`${prefix}savedqueue addcurrentqueue ${Name}\\`\\nAdd the current **Track** onto it: \\`${prefix}savedqueue addcurrenttrack ${Name}\\``",
+                "variable49": "`There are now: \\`${client.queuesaves.get(message.author.id, `${Name}`).length} Tracks\\`\\n\\nPlay it with: \\`${prefix}savedqueue play ${Name}\\``",
+                "variable50": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable51": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable52": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable53": "`Maximum Length is \\`10\\``",
+                "variable54": "`${emoji.msg.ERROR} Your Queue is not existing!`",
+                "variable55": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable56": "`${emoji.msg.ERROR} Your Saved-Queue ${Name} is Empty!`",
+                "variable57": "`Add the current **Queue** onto it: \\`${prefix}savedqueue addcurrentqueue ${Name}\\`\\nAdd the current **Track** onto it: \\`${prefix}savedqueue addcurrenttrack ${Name}\\``",
+                "variable58": "`There are now: \\`${client.queuesaves.get(message.author.id, `${Name}`).length} Tracks\\`\\n\\nPlay it with: \\`${prefix}savedqueue play ${Name}\\``",
+                "variable59": "`${emoji.msg.ERROR} You don't have any Queues saved yet`",
+                "variable60": "`Create one with: \\`${prefix}savedqueue create <SavedQueueName>\\``",
+                "variable61": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable62": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable63": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable64": "`Maximum Length is \\`10\\``",
+                "variable65": "`${emoji.msg.ERROR} Your Queue already exists!`",
+                "variable66": "`Delete it: \\`${prefix}savedqueue delete ${Name}\\`\\nShow its content: \\`${prefix}savedqueue showdetails ${Name}`",
+                "variable67": "`${emoji.msg.ERROR} There is nothing playing`",
+                "variable68": "`${emoji.msg.ERROR} The Queue is Empty!`",
+                "variable69": "`${emoji.msg.SUCCESS} Created ${Name} and Added ${tracks.length} Tracks to it`",
+                "variable70": "`Play it with: \\`${prefix}savedqueue play ${Name}\\`\\nAdd the current **Queue** onto it: \\`${prefix}savedqueue addcurrentqueue ${Name}\\`\\nAdd the current **Track** onto it: \\`${prefix}savedqueue addcurrenttrack ${Name}\\``",
+                "variable71": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable72": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable73": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable74": "`Maximum Length is \\`10\\``",
+                "variable75": "`${emoji.msg.ERROR} Your Queue does not exists yet!`",
+                "variable76": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable77": "`${emoji.msg.SUCCESS} Deleted the Queue \\`${Name}\\``",
+                "variable78": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable79": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable80": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable81": "`Maximum Length is \\`10\\``",
+                "variable82": "`${emoji.msg.ERROR} You need to join a voice channel.`",
+                "variable83": "`${emoji.msg.ERROR} You need to be in my voice channel to use this command!`",
+                "variable84": "`Channelname: \\`${message.guild.channels.cache.get(player.voiceChannel).name}\\``",
+                "variable85": "`${emoji.msg.ERROR} You need to be in my voice channel to use this command!`",
+                "variable86": "`Channelname: \\`🔈 ${mechannel.name}\\``",
+                "variable87": "`${emoji.msg.ERROR} Your Queue does not exists Yet!`",
+                "variable88": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable89": "`Attempting to Load ${client.queuesaves.get(message.author.id, `${Name}`).length} Tracks`",
+                "variable90": "`It might take around about \\`${Math.ceil(client.queuesaves.get(message.author.id, `${Name}`).length / 2)} Seconds\\``",
+                "variable91": "`${emoji.msg.SUCCESS} Loaded ${client.queuesaves.get(message.author.id, `${Name}`).length} Tracks onto the current Queue`",
+                "variable92": "`${emoji.msg.ERROR} You didn't entered a Saved-Queue-Name`",
+                "variable93": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nName Information:\\n\\`Can be anything with maximum of 10 Letters\\``",
+                "variable94": "`${emoji.msg.ERROR} Your Saved-Queue-Name is too long!`",
+                "variable95": "`Maximum Length is \\`10\\``",
+                "variable96": "`${emoji.msg.ERROR} Your Queue is not existing!`",
+                "variable97": "`Create it with: \\`${prefix}savedqueue create ${Name}\\``",
+                "variable98": "`${emoji.msg.ERROR} You didn't entered a **valid** TYPE`",
+                "variable99": "`Usage: \\`${prefix}savedqueue <Type> <Name>\\`\\nValid Types:\\n\\`create\\`, \\`addcurrenttrack\\`, \\`addcurrentqueue\\`, \\`removetrack\\`, \\`removedupes\\`, \\`showall\\`, \\`createsave\\`, \\`delete\\`, \\`showdetails\\`, \\`play\\`, \\`shuffle\\``",
+                "variable100": "``"
+            }
+        }
+    },
+    "common": {
+        "deaf": "❌ You cannot execute this command while you are `DEAF` / `SERVERDEAF`",
+        "usernotfound": "❌ Could not find the USER",
+        "rolenotfound": "❌ Could not find the ROLE",
+        "erroroccur": "❌ An error occurred",
+        "disabled": {
+            "title": "❌ **This Command is currently, disabled**",
+            "description": "**An Admin can enable it with: `{prefix}setup-commands`**"
+        },
+        "nothing_playing": "**Não estou a tocar nada no momento!**",
+        "join_vc": "❌ **Precisas de estar num canal de voz primeiro!**",
+        "wrong_vc": "❌ **Precisas de estar no mesmo canal de voz que eu para usar esse comando!**",
+        "not_connected": "❌ **I am not connected to a Voice Channel anymore!**",
+        "dms_disabled": "❌ **Your Dm's are disabled!**",
+        "example": "For example",
+        "botchat": {
+            "title": "❌ **Error | Not in the Bot Chat!**",
+            "description": "**There is a Bot chat setup in this GUILD! Try using the Bot Commands here:**"
+        },
+        "ping": "👍 **To see all Commands type: `{prefix}help`!**",
+        "unknowncmd": {
+            "title": "❌ **Comando desconhecido, tenta: `{prefix}help`!**",
+            "description": "**O prefixo para este servidor é: `{prefix}`**\n\n*Também podes **mencionar-me**, ao invés de usar o prefixo!*\n\n**To see all Commands Type `{prefix}help [Cat/Cmd]`!**\n\n**To see all available setups type `{prefix}setup`!**"
+        },
+        "cooldown": "❌ Espera mais {time} segundos para poder usar o comando `{commandname}` !",
+        "premium": {
+            "title": "❌ **This Command is Premium Only!** 💰",
+            "description": "An Admin can request this Server as PREMIUM-GUILD by typing: `{prefix}premium`"
+        },
+        "permissions": {
+            "title": "❌ **You are not allowed to run this command!**",
+            "description": "**Precisas destas permissões:**"
+        },
+        "missingroles": {
+            "title": "❌ **You are not allowed to run this command!**",
+            "description": "**You need these Roles:**",
+            "description2": "**You need to be the Requester of the current playing Track!**\nOR: **You need these Roles:**"
+        },
+        "nodjs": "no DJ-Roles setupped! Everyone can use the Music-Commands.",
+        "nobotchannels": "No Bot-Channels setupped! The Commands are useable in all Channels.",
+        "somethingwentwrong": "❌ **An error occurred while, running this Command!**"
+    },
+    "handlers": {
+        "erelaevents": {
+            "client_events": {
+                "variable3": "`${emoji.msg.ERROR} Queue has ended | Channel Empty`",
+                "variable4": "`I left the Channel: ${client.channels.cache.get(player.voiceChannel).name} because the Channel got empty`"
+            },
+            "events": {
+                "variable1": "`${player.get(`autoplay`) ? `Enabled` : `Disabled`} the Autoplay feature`"
+            }
+        },
+        "functionsjs": {
+            "functions": {
+                "variable1": "`I left the Channel: \\`${client.channels.cache.get(player.voiceChannel).name}\\` because the Queue was empty for: \\`${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}\\``",
+                "variablex_2": "`NO ROLES ADDED`","variable2": "`Add them with: \\`${client.settings.get(guild.id, `prefix`)} setup-roster\\``",
+                "variablex_3": "`**__${role.name.toUpperCase()} [${[...role.members.values()].length}]__**`","variable3": "[...role.members.values()].length === 0 ? `> No one has this Role` : role.members.map(member => `${the_roster_db.get(guild.id, `rosteremoji`)} <@${member.user.id}> | \\`${member.user.tag}\\``).join(`\\n`).substr(0, leftnum <= 1024 ? leftnum : 1024), the_roster_db.get(guild.id, `inline`)",
+                "variable4": "`Pick your Station, by typing in the right `INDEX` Number!`",
+                "variable4_1": "`Example: `?radio 11``",
+                "variable5": "`Pick your Station, by typing in the right `INDEX` Number!`",
+                "variable5_1": "`Example: `?radio 69``",
+                "variable6": "`Pick your Station, by typing in the right `INDEX` Number!`",
+                "variable6_1": "`Example: `?radio 180``",
+                "variable7": "`${emoji.msg.ERROR} Found nothing related for the latest Song!`",
+                "variable8": "`${emoji.msg.ERROR} Queue has ended.`",
+                "variable9": "`I left the Channel: \\`${client.channels.cache.get(player.voiceChannel).name}\\` because the Queue was empty for: \\`${ms(config.settings.LeaveOnEmpty_Queue.time_delay, { long: true })}\\``",
+                "variable10": "`${user.member.user} | ${emoji.msg.ERROR} Please give me the permission, `MANGE CHANNELS` --> I need to be able to create Channels ...`",
+                "variable11": "`${user.member.user} | ${emoji.msg.ERROR} Please give me the permission, \\`MANGE CHANNELS\\` --> I need to be able to create Channels ...`",
+                "variable12": "-"
+            }
+        },
+        "playermanagerjs": {
+            "playermanager": {
+                "variable1": "`${emoji.msg.ERROR} I need permissions to join your channel`",
+                "variable2": "`${emoji.msg.ERROR} I need permissions to speak in your channel`",
+                "variable3": "`${emoji.msg.ERROR} No valid search Term? ... Please Contact: `Tomato#6966``"
+            }
+        },
+        "playermanagers": {
+            "playlist": {
+                "variable1": "`${emoji.msg.ERROR} Error | There was an error while searching:`",
+                "variable2": "``",
+                "variable3": "`Please retry!`",
+                "variable4": "`:thumbsup: **Added Playlist 🩸 [${res.playlist.name}](${res.playlist.uri})**`"
+            },
+            "playtop": {
+                "variable1": "`Please retry!`",
+                "variable2": "`:thumbsup: **Queued :notes: [${res.tracks[0].title}](${res.tracks[0].uri})**`",
+                "variable3": "`Please retry!`",
+                "variable4": "`**`+res.playlist.name+`**`",
+                "variablex_5": "`Estimated time until playing`","variable5": "time > 10 ? format(time).split(` | `)[0] : `NOW`",
+                "variable6": "`Added: \\`${res.tracks[0].title}\\` - to the Queue\\n**Channel:** ${res.tracks[0].author}\\n**Song Duration:** ${res.tracks[0].isStream ? `LIVE STREAM` : format(res.tracks[0].duration).split(` | `)[0]}\\n**Estimated time until playing:** ${time}\\n**Position in queue:** ${player.queue.length}\\n${res.tracks[0].uri}`"
+            },
+            "request": {
+                "variable1": "`Please retry!`",
+                "variable2": "`Please retry!`"
+            },
+            "search": {
+                "variable1": "`${emoji.msg.ERROR} Error | There was an error while searching:`",
+                "variable2": "``",
+                "variable3": "`${emoji.msg.ERROR} Error | You didn't provide a selection`",
+                "variable4": "'${emoji.msg.ERROR} Error | Cancelled selection.'",
+                "variable5": "`:thumbsup: **Queued :notes: [${track.title}](${track.uri})**`"
+            },
+            "similar": {
+                "variable1": "`${emoji.msg.ERROR} Error | Found nothing related for the latest Song`",
+                "variable2": "`:thumbsup: **Queued :notes: [${res.tracks[0].title}](${res.tracks[0].uri})**`",
+                "variable3": "`${emoji.msg.SUCCESS} Pick your Song with the `INDEX Number``",
+                "variable4": "`${emoji.msg.ERROR} Error | You didn't provide a selection`",
+                "variable5": "'${emoji.msg.ERROR} Error | Cancelled selection.'",
+                "variable6": "`${emoji.msg.ERROR} Error | The number you provided too small or too big (1-${max}).`",
+                "variable7": "`Please retry!`",
+                "variable8": "`:thumbsup: **Queued :notes: [${track.title}](${track.uri})**`"
+            },
+            "skiptrack": {
+                "variable1": "`${emoji.msg.ERROR} Error | There was an error while searching:`",
+                "variable2": "``",
+                "variable3": "`Please retry!`"
+            },
+            "song": {
+                "variable1": "`${emoji.msg.ERROR} Error | There was an error while searching:`",
+                "variable2": "``",
+                "variable3": "`Tenta outra vez!`",
+                "variable4": "`:thumbsup: **Queued :notes: [${res.tracks[0].title}](${res.tracks[0].uri})**`",
+                "variable5": "`Tenta outra vez!`"
+            }
+        }
+    }
+}
