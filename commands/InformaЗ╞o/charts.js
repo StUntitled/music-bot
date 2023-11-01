@@ -19,20 +19,8 @@ module.exports = {
       try {
      
 
-        function timeConverter(UNIX_timestamp){
-            var a = new Date(UNIX_timestamp);
-            var year = a.getFullYear();
-            var month = a.getMonth() + 1 ;
-            var date = a.getDate();
-            var time = year.toString() + '-' + month.toString() + '-' + date.toString();
-            return time;
-          }
-    
-          let time = message.createdTimestamp
-          let date = timeConverter(time);
-
     // date format YYYY-MM-DD
-    getChart('hot-100', `${date.toString()}`, (err, chart) => {
+    getChart('hot-100', `2023-10-28`, (err, chart) => {
       if (err) console.log(err);
       // week of the chart in the date format YYYY-MM-DD
  //    console.log(chart.week);
